@@ -10,9 +10,9 @@ app.post('/events', (req, res) => {
 
   console.log(event);
 
-  // axios.post('http://localhost:33014/query_service-1.0-SNAPSHOT/events', event).catch((err) => {
-  //   console.log(err.message);
-  // });
+  axios.post('http://localhost:34303/query_service_jakarta-1.0-SNAPSHOT/events', event).catch((err) => {
+    console.log(`Post event to Query Service failed with: ${err.message}`);
+  });
   axios.post('http://localhost:8080/posts-1.0-SNAPSHOT/events', event).catch((err) => {
     console.log(`Post event to Posts failed with: ${err.message}`);
   });
